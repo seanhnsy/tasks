@@ -4,7 +4,7 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    return Math.round((temperature - 32) * 0.5555555555555555);
 }
 
 /**
