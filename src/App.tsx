@@ -5,10 +5,11 @@ import "./App.css";
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header style={{ backgroundColor: "orangered" }}>
+            <header style={{ backgroundColor: "blue" }}>
                 Sean Hennessey: UD CISC275 with React Hooks and TypeScript.
                 Hello World
             </header>
+            <h1></h1>
             <Container>
                 <Row>
                     <Col>
