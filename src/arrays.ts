@@ -129,5 +129,18 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let negativeNum = values.findIndex((value: number): boolean => value < 0);
+    if (negativeNum === -1) {
+        negativeNum = 10000;
+    }
+    const beforeNegative = values.map((num: number): number =>
+        values.indexOf(num) < negativeNum ? num : 0
+    );
+    const sum = beforeNegative.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    const final = [...values];
+    final.splice(negativeNum + 1, 0, sum);
+    return final;
 }
