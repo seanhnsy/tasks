@@ -31,7 +31,15 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    const ansTrimmed = answer.trim();
+    const finalAns = ansTrimmed.toLowerCase();
+    const expTrimmed = question.expected.trim();
+    const finalExp = expTrimmed.toLowerCase();
+    if (finalAns === finalExp) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
