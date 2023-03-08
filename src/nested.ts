@@ -101,7 +101,20 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const stringReps = questions.map(
+        (val: Question): string =>
+            val.id.toString() +
+            "," +
+            val.name +
+            "," +
+            val.options.length.toString() +
+            "," +
+            val.points.toString() +
+            "," +
+            val.published.toString()
+    );
+    const finalStr = stringReps.join("\n");
+    return "id,name,options,points,published" + "\n" + finalStr;
 }
 
 /**
