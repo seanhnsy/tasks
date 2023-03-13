@@ -57,6 +57,8 @@ export function isValid(question: Question, answer: string): boolean {
         } else {
             return false;
         }
+    } else {
+        return false;
     }
 }
 
@@ -97,6 +99,8 @@ export function toMarkdown(question: Question): string {
         );
         const newAllAns = allAns.join("");
         return "# " + question.name + "\n" + question.body + newAllAns;
+    } else {
+        return "";
     }
 }
 
@@ -118,7 +122,7 @@ export function publishQuestion(question: Question): Question {
     if (question.published === true) {
         const notPub = { ...question, published: false };
         return notPub;
-    } else if (question.published === false) {
+    } else {
         const pub = { ...question, published: true };
         return pub;
     }
