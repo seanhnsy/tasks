@@ -189,7 +189,12 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const targetIndex = questions.findIndex(
+        (check: Question): boolean => check.id === targetId
+    );
+    const renamed = [...questions];
+    renamed[targetIndex] = { ...questions[targetIndex], name: newName };
+    return renamed;
 }
 
 /***
