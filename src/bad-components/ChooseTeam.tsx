@@ -19,6 +19,8 @@ function chooseMember(props: chooseTeamProps, newMember: string) {
     if (!props.team.includes(newMember)) {
         const newTeam = [...props.team, newMember];
         props.setTeam(newTeam);
+    } else {
+        props.setTeam(props.team);
     }
 }
 
@@ -40,13 +42,7 @@ export function ChooseTeam(): JSX.Element {
                             Add{" "}
                             <Button
                                 onClick={() =>
-                                    chooseMember(
-                                        {
-                                            team,
-                                            setTeam
-                                        },
-                                        option
-                                    )
+                                    chooseMember({ team, setTeam }, option)
                                 }
                                 size="sm"
                             >
