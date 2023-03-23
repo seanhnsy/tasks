@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export const COLORS = ["red", "blue", "green"];
-const DEFAULT_COLOR_INDEX = 0;
 
 interface coloredBoxProps {
     setColorIndex: (colorIndex: number) => void;
